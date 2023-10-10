@@ -1,0 +1,36 @@
+
+main{
+    background-color: white;
+    margin: auto;
+    text-align: center;
+    width: 80%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-areas: "h h h"
+                         "a a a"
+                         "f f f";
+    grid-template-columns: 1fr 1fr 1fr;
+}
+header{
+    grid-area: h;
+}
+article{
+    grid-area: a;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 20px;
+    height: 500px;
+    margin: auto;
+}
+
+footer{
+    padding-top: 100px;
+    grid-area: f;
+
+}
+.Lampa{
+    border-radius: 50%;
+    border-style: solid;
+    width: 200px;
+    height: 200px;
+}
