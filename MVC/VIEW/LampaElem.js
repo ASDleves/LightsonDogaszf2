@@ -1,20 +1,27 @@
 class LampaElem {
-    constructor(id, szuloElem, controller) {
-      this.id = id;
-      this.controller = controller;
-      this.divElem = document.createElement("div");
-      this.divElem.classList.add("Lampa");
-      const szin = "green"
-      this.divElem.style.backgroundColor = szin;
-  
-      this.divElem.addEventListener("click", () => this.controller.lampaKattintas(this));
-      szuloElem.appendChild(this.divElem);
+  constructor(id, parent, controller) {
+    this.id = id;
+    this.controller = controller;
+    this.element = document.createElement("div");
+    this.element.classList.add("lampa");
+
+    const randomNumber = Math.floor(Math.random() * 100);
+    if (randomNumber < 20) {
+      this.setSzin("green");
+    } else {
+      this.setSzin("orange");
     }
-  
-    setSzin(szin) {
-      this.divElem.style.backgroundColor = szin;
-    }
+
+    parent.appendChild(this.element);
+    this.element.addEventListener("click", () =>
+      this.controller.lampaKattintas(this)
+    );
   }
-  
-  export default LampaElem;
-  
+
+  setSzin(szin) {
+    this.element.style.backgroundColor = szin;
+    this.color = szin; // Add this line to store the current color
+  }
+}
+
+export default LampaElem;
