@@ -4,8 +4,7 @@ class LampaElem {
       this.controller = controller;
       this.divElem = document.createElement("div");
       this.divElem.classList.add("Lampa");
-      const randomChance = Math.floor(Math.random() * 100) + 1;
-      const szin = randomChance <= 20 ? "green" : "orange";
+      const szin = "green"
       this.divElem.style.backgroundColor = szin;
   
       this.divElem.addEventListener("click", () => this.controller.lampaKattintas(this));
